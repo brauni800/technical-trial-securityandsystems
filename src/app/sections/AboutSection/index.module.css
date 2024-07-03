@@ -1,0 +1,12 @@
+.container {
+  color: #2F2D2E;
+}
+
+.about {
+  padding: 0 1rem;
+  color: #FFF;
+
+  & > p {
+    text-wrap: pretty;
+  }
+}
