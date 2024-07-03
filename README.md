@@ -13,4 +13,9 @@ npm run build
 npm run start
 ```
 
+Run test:
+```bash
+npm run test
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
