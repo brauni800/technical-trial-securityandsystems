@@ -1,0 +1,37 @@
+.label {
+  display: grid;
+  width: 200px;
+  padding: 1.5rem 0;
+  grid-template-areas: "input";
+
+  & > * {
+    grid-area: input;
+  }
+
+  & > span {
+    transform-origin: left;
+    transition: transform .3s, color .3s;
+    cursor: text;
+    z-index: -1;
+    display: grid;
+    align-items: flex-end;
+  }
+  
+  & > textarea {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--accent-color);
+    background-color: transparent;
+    font: inherit;
+    resize: none;
+    max-height: 100px;
+    field-sizing: content;
+
+    &:focus + span, &:not(:placeholder-shown) + span {
+      color: var(--accent-color);
+      transform: translate(0, -100%) scale(.8);
+    }
+  }
+}

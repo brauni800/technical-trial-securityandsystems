@@ -1,0 +1,16 @@
+.button {
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: none;
+  margin:  0;
+
+  background-color: var(--accent-color);
+  transition: filter .3s ease-in;
+  color: var(--secondary-color);
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(0.8);
+  }
+}
