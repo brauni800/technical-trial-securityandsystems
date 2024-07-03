@@ -1,0 +1,46 @@
+.header {
+  position: sticky;
+  padding: 3rem 1rem 0 1rem;
+  z-index: 1;
+  top: -300px;
+  background-color: var(--primary-color);
+
+  .intro {
+    position: relative;
+    height: 420px;
+    display: flex;
+    align-items: flex-end;
+
+    & > img {
+      position: absolute;
+      top: 0;
+      border-radius: 50%;
+      object-fit: cover;
+      animation: scale-down both ease-out;
+      animation-timeline: scroll();
+      animation-range: 0 200px;
+      transform-origin: 0% 50%;
+    }
+  
+    & > h1 {
+      margin: 0 0 4rem;
+      animation: slide both ease;
+      animation-timeline: scroll();
+      animation-range: 0 200px;
+    }
+  }
+}
+
+
+@keyframes scale-down {
+  to {
+    scale: 0.35;
+    top: 185px;
+  }
+}
+
+@keyframes slide {
+  to {
+    translate: 120px 0;
+  }
+}
