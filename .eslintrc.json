@@ -1,5 +1,10 @@
 {
-  "extends": ["next/core-web-vitals", "standard"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended",
+    "standard"
+  ],
   "env": {
     "jest": true
   }
