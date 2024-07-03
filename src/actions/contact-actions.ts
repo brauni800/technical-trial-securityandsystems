@@ -9,6 +9,7 @@ export async function sendMail (prevState: any, formData: FormData) {
 
   console.log({ rawData })
   return {
-    message: 'ready'
+    success: true,
+    error: null
   }
 }
