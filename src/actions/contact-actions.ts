@@ -1,15 +1,16 @@
 'use server'
 
-export async function sendMail (prevState: any, formData: FormData) {
-  const rawData = {
-    email: formData.get('email'),
-    fullName: formData.get('full_name'),
-    message: formData.get('message')
-  }
+import { MailSchema } from '@/utils/schemas/mail'
 
-  console.log({ rawData })
+export async function sendMail (prevState: any, formData: FormData) {
+  const validatedFields = MailSchema.safeParse({
+    email: formData.get('email'),
+    full_name: formData.get('full_name'),
+    message: formData.get('message')
+  })
+
   return {
-    success: true,
-    error: null
+    success: validatedFields.success,
+    error: validatedFields.error?.flatten().fieldErrors ?? null
   }
 }

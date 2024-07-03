@@ -27,7 +27,8 @@ export default function ContactForm () {
     }
 
     if (state.error) {
-      toast.error('Ocurrió un error 💀')
+      const [, firstErrorList] = Object.entries(state.error).find(([, errorList]) => errorList.length)!
+      toast.error(`Error 💀: ${firstErrorList[0]}`)
     }
   }, [state])
 
